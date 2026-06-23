@@ -88,16 +88,19 @@ export default defineComponent({
 
           <div class={`${styles.mobileMenu} ${isMobileMenuOpen.value ? styles.mobileMenuOpen : ''}`}>
             <div class={styles.mobileLinks}>
-              {links.map(link => (
-                <RouterLink 
-                  key={link.path}
-                  to={link.path}
-                  class={styles.mobileNavLink}
-                  onClick={closeMobileMenu}
-                >
-                  {link.name}
-                </RouterLink>
-              ))}
+              {links.map(link => {
+                const isActive = route.path === link.path
+                return (
+                  <RouterLink 
+                    key={link.path}
+                    to={link.path}
+                    class={`${styles.mobileNavLink} ${isActive ? styles.mobileActiveLink : ''}`}
+                    onClick={closeMobileMenu}
+                  >
+                    {link.name}
+                  </RouterLink>
+                )
+              })}
               <div class={styles.mobileJoinBtn}>
                 <BrutalButton href="/connect" onClick={closeMobileMenu}>
                   JOIN US →

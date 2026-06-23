@@ -98,12 +98,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 30px;
-  height: 20px;
+  width: 24px;
+  height: 16px;
   background: none;
   border: none;
   cursor: pointer;
   z-index: 1010;
+  padding: 0;
 }
 
 @media (min-width: 768px) {
@@ -115,17 +116,17 @@
 .bar {
   display: block;
   width: 100%;
-  height: 4px;
+  height: 3px;
   background-color: var(--black);
   transition: var(--transition);
 }
 
 .hamburgerActive .bar {
-  background-color: var(--white);
+  background-color: var(--black);
 }
 
 .hamburgerActive .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(6.5px) rotate(45deg);
 }
 
 .hamburgerActive .bar:nth-child(2) {
@@ -133,23 +134,20 @@
 }
 
 .hamburgerActive .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-6.5px) rotate(-45deg);
 }
 
 .mobileMenu {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 100%;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--black);
-  z-index: 1005;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateY(-100%);
+  width: 100%;
+  background-color: var(--bg);
+  border-bottom: var(--border-thick);
+  z-index: 999;
+  transform: translateY(-10px);
   opacity: 0;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease-in-out;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease-in-out;
   pointer-events: none;
 }
 
@@ -162,25 +160,45 @@
 .mobileLinks {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  align-items: stretch;
+  gap: 0;
   width: 100%;
+  padding: 0.5rem 0 0 0;
 }
 
 .mobileNavLink {
-  font-family: var(--font-display);
-  font-size: 3rem;
-  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--black);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 2px solid rgba(13, 13, 13, 0.08);
   transition: var(--transition);
+  display: block;
 }
 
 .mobileNavLink:hover {
-  color: var(--orange);
-  transform: scale(1.1);
+  background-color: var(--yellow);
+  padding-left: 2rem;
+}
+
+.mobileActiveLink {
+  background-color: var(--yellow);
+  border-left: 6px solid var(--orange);
+  padding-left: 2rem;
 }
 
 .mobileJoinBtn {
   margin-top: 1rem;
+  padding: 0 1.5rem 1.5rem 1.5rem;
 }
+
+.mobileJoinBtn :global(.brutal-btn) {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
