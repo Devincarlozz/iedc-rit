@@ -2,7 +2,7 @@
 
 A production-grade, highly interactive, multi-page website built for the **Innovation & Entrepreneurship Development Cell (IEDC)** at the **Rajagiri Institute of Technology (RIT)**.
 
-🌐 **Live Demo:** [https://iedc-rit-neo.pages.dev/](https://iedc-rit-neo.pages.dev/)
+🌐 **Live Demo:** [https://iedc-rit.pages.dev/](https://iedc-rit.pages.dev/)
 
 ---
 
@@ -96,5 +96,5 @@ The application is deployed directly to Cloudflare Pages.
 To deploy new changes manually:
 ```bash
 npm run build
-npx wrangler pages deploy dist --project-name=iedc-rit-neo
+npx wrangler pages deploy dist --project-name=iedc-rit
 ```

@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "npx wrangler pages deploy dist --project-name=iedc-rit-neo"
+    "deploy": "npx wrangler pages deploy dist --project-name=iedc-rit"
   },
   "dependencies": {
     "vue": "^3.4.0",
