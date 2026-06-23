@@ -127,7 +127,7 @@ export default defineComponent({
         </div>
         <div class={`${styles.bottom} container`}>
           <p class={styles.copy}>
-            © 2025 IEDC RIT · All rights reserved · Created by <a href={sanitizeUrl('https://instagram.com/b_k.dev')} target="_blank" rel="noopener noreferrer" class={styles.creditLink}>Bhagath Krishnan (@b_k.dev)</a> · Made with ❤️ at RIT
+            © 2025 IEDC RIT · All rights reserved · Created by Bhagath Krishnan (<a href={sanitizeUrl('https://instagram.com/b_k.dev')} target="_blank" rel="noopener noreferrer" class={styles.creditLink}>@b_k.dev</a> | <a href={sanitizeUrl('https://github.com/Devincarlozz')} target="_blank" rel="noopener noreferrer" class={styles.creditLink}>GitHub</a>)
           </p>
         </div>
       </footer>

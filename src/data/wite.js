@@ -31,20 +31,20 @@ export const witeStories = [
     name: 'Anjali R',
     role: 'Founder, NutriTrack',
     quote: 'IEDC WiTe gave me the confidence to pitch, fail, and pitch again.',
-    img: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=300&q=80&auto=format&fit=crop'
+    img: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=300&fit=crop'
   },
   {
     id: 2,
     name: 'Meera S',
     role: 'SDE @ Google',
     quote: 'The SheBuilds bootcamp was where I wrote my first real product spec.',
-    img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&q=80&auto=format&fit=crop'
+    img: 'https://images.pexels.com/photos/3775087/pexels-photo-3775087.jpeg?auto=compress&cs=tinysrgb&w=300&fit=crop'
   },
   {
     id: 3,
     name: 'Divya K',
     role: 'Co-founder, EduVerse',
     quote: 'From mentee to mentor — WiTe changed the trajectory of my career.',
-    img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&q=80&auto=format&fit=crop'
+    img: 'https://images.pexels.com/photos/3776932/pexels-photo-3776932.jpeg?auto=compress&cs=tinysrgb&w=300&fit=crop'
   }
 ]

@@ -116,7 +116,7 @@ export default defineComponent({
             </div>
             <div class={`${styles.heroImageWrapper} float-animation`}>
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80&auto=format&fit=crop"
+                src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Women in Tech representation"
                 class={styles.heroImage}
                 width="800"
@@ -239,7 +239,7 @@ export default defineComponent({
             <div class={styles.storiesStaticImage}>
               <BrutalCard bg="var(--yellow)" class={styles.staticImageCard}>
                 <img
-                  src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=800&q=80&auto=format&fit=crop"
+                  src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="WiTe team brainstorm session"
                   class={styles.staticImg}
                   width="800"

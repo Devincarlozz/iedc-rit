@@ -12,7 +12,7 @@ export default defineComponent({
     target: { type: String, default: '' },
     rel: { type: String, default: '' }
   },
-  setup(props, { slots }) {
+  setup(props, { slots, attrs }) {
     const btnRef = ref(null)
 
     const handleMouseMove = (e) => {
@@ -36,6 +36,14 @@ export default defineComponent({
       el.style.transition = 'transform 0.3s cubic-bezier(0.25, 1, 0.5, 1)'
     }
 
+    const handleAnchorClick = (e, targetId) => {
+      e.preventDefault()
+      const element = document.getElementById(targetId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+
     const isExternal = (url) => {
       return url.startsWith('http://') || url.startsWith('https://') || url.startsWith('#')
     }
@@ -48,6 +56,8 @@ export default defineComponent({
           const safeRel = props.target === '_blank' && !props.rel
             ? 'noopener noreferrer'
             : props.rel
+          const isAnchor = safeHref.startsWith('#')
+          const targetId = isAnchor ? safeHref.substring(1) : ''
           return (
             <a
               ref={btnRef}
@@ -57,6 +67,8 @@ export default defineComponent({
               class={`${className} ${styles.btn}`}
               onMousemove={handleMouseMove}
               onMouseleave={handleMouseLeave}
+              onClick={isAnchor ? (e) => handleAnchorClick(e, targetId) : undefined}
+              {...attrs}
             >
               {slots.default ? slots.default() : null}
             </a>
@@ -69,6 +81,7 @@ export default defineComponent({
               class={`${className} ${styles.btn}`}
               onMousemove={handleMouseMove}
               onMouseleave={handleMouseLeave}
+              {...attrs}
             >
               {slots.default ? slots.default() : null}
             </RouterLink>
@@ -82,6 +95,7 @@ export default defineComponent({
           class={`${className} ${styles.btn}`}
           onMousemove={handleMouseMove}
           onMouseleave={handleMouseLeave}
+          {...attrs}
         >
           {slots.default ? slots.default() : null}
         </button>

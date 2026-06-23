@@ -16,7 +16,7 @@ export default defineComponent({
         role: 'Founder',
         startup: 'DevSync',
         tag: 'DEV TOOLS',
-        img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
+        img: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
         quote: 'IEDC RIT gave us the raw support, workspace, and community feedback that turned a late-night side project into a funded developer tool.'
       },
       {
@@ -25,7 +25,7 @@ export default defineComponent({
         role: 'Co-founder',
         startup: 'Mechano',
         tag: 'HARDWARE',
-        img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face',
+        img: 'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
         quote: 'The ideation bootcamps and funding advice helped us structure our hardware startup and build our first working prototype.'
       },
       {
@@ -34,7 +34,7 @@ export default defineComponent({
         role: 'Founder',
         startup: 'NutriTrack',
         tag: 'HEALTH TECH',
-        img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face',
+        img: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
         quote: 'From pitching at HackRIT to securing our first pilot clients, the startup ecosystem here was absolutely instrumental.'
       }
     ]

@@ -5,7 +5,7 @@ export const events = [
     title: 'HackRIT 2025',
     date: 'Nov 12',
     location: 'RIT Campus',
-    img: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80&auto=format&fit=crop',
+    img: 'https://images.pexels.com/photos/7102/notes-macbook-study-conference.jpg?auto=compress&cs=tinysrgb&w=600',
     desc: 'A 24-hour hackathon for builders, dreamers, and problem-solvers.',
     status: 'Registration Open'
   },
@@ -15,7 +15,7 @@ export const events = [
     title: 'Design Thinking Bootcamp',
     date: 'Oct 5',
     location: 'Innovation Lab',
-    img: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80&auto=format&fit=crop',
+    img: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600',
     desc: 'Learn to ideate, prototype, and test with real user empathy.',
     status: 'Registration Open'
   },
@@ -25,7 +25,7 @@ export const events = [
     title: 'StartupSprint Demo Day',
     date: 'Sep 20',
     location: 'Auditorium',
-    img: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80&auto=format&fit=crop',
+    img: 'https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=600',
     desc: 'Present your startup idea to a panel of founders and investors.'
   },
   {
@@ -34,7 +34,7 @@ export const events = [
     title: 'Founder Fireside Chat',
     date: 'Aug 30',
     location: 'Seminar Hall',
-    img: 'https://images.unsplash.com/photo-1560439513-74b037a25d84?w=600&q=80&auto=format&fit=crop',
+    img: 'https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=600',
     desc: 'Candid conversations with Kerala\'s top startup founders.'
   },
   {
@@ -43,7 +43,7 @@ export const events = [
     title: 'IdeaStorm 3.0',
     date: 'Jul 15',
     location: 'Online',
-    img: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&q=80&auto=format&fit=crop',
+    img: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600',
     desc: 'The biggest idea competition at RIT returns for its third edition.'
   },
   {
@@ -52,7 +52,7 @@ export const events = [
     title: 'No-Code Founders Sprint',
     date: 'Jun 22',
     location: 'Innovation Lab',
-    img: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80&auto=format&fit=crop',
+    img: 'https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=600',
     desc: 'Build your MVP without writing a single line of code.'
   }
 ]
