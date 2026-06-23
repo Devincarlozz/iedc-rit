@@ -1,0 +1,71 @@
+.brutal-card {
+  border: var(--border-thick);
+  box-shadow: var(--shadow);
+  background: var(--white);
+  transition: var(--transition);
+  border-radius: 0px;
+}
+
+.brutal-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.brutal-btn {
+  border: var(--border-thick);
+  box-shadow: var(--shadow);
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--orange);
+  color: var(--black);
+  padding: 0.75rem 2rem;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px;
+}
+
+.brutal-btn:hover {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
+
+.brutal-btn-outline {
+  border: var(--border-thick);
+  box-shadow: var(--shadow);
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--white);
+  color: var(--black);
+  padding: 0.75rem 2rem;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px;
+}
+
+.brutal-btn-outline:hover {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
+
+.brutal-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  border: 2px solid var(--black);
+  padding: 4px 10px;
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 600;
+  display: inline-block;
+  border-radius: 0px;
+}

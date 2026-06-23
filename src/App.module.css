@@ -1,0 +1,19 @@
+.appWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.mainContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .appWrapper {
+    padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px));
+  }
+}

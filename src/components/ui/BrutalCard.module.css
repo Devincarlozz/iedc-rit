@@ -1,0 +1,13 @@
+.card {
+  padding: 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(12px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.2), var(--shadow) !important;
+}

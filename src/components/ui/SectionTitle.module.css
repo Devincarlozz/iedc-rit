@@ -1,0 +1,22 @@
+.title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.accent {
+  color: var(--orange);
+}
+
+.text {
+  color: var(--black);
+}

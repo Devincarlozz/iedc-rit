@@ -1,0 +1,41 @@
+.connectSection {
+  padding: 4rem 1.5rem;
+}
+
+.card {
+  padding: 3rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 5rem 3rem;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.title {
+  color: var(--black);
+  margin-bottom: 0;
+  max-width: 800px;
+}
+
+.subtitle {
+  color: var(--black);
+  max-width: 600px;
+  font-weight: 600;
+}
+
+.cta {
+  margin-top: 1rem;
+}
+
+.btn {
+  background-color: var(--orange);
+}

@@ -1,0 +1,94 @@
+:root {
+  --orange: #00FF41;
+  --electric-green: #00FF41;
+  --teal: #3BBFBF;
+  --black: #000000;
+  --white: #FAFAFA;
+  --yellow: #FFD60A;
+  --pink: #FF2D78;
+  --purple: #7C3AED;
+  --bg: #F5F0E8;
+  --border: 3px solid #0D0D0D;
+  --border-thick: 5px solid #0D0D0D;
+  --shadow: 6px 6px 0px #0D0D0D;
+  --shadow-lg: 10px 10px 0px #0D0D0D;
+  --shadow-orange: 6px 6px 0px var(--orange);
+  --shadow-teal: 6px 6px 0px var(--teal);
+  --radius: 0px;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--black);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.text-hero {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 12vw, 10rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.text-display {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.text-heading {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.1;
+}
+
+.text-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.text-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}

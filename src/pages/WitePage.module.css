@@ -1,0 +1,416 @@
+.witePage {
+  --orange: #FF2D78;
+  --teal: #00D166;
+  --bg: #FFC2D1;
+  --shadow: 6px 6px 0px #0D0D0D;
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topBreadcrumbContainer {
+  background-color: var(--black);
+  padding: 1rem 0;
+}
+
+.backLink {
+  color: var(--white);
+  transition: var(--transition);
+  font-weight: 700;
+}
+
+.backLink:hover {
+  color: var(--orange);
+}
+
+.hero {
+  padding: 4rem 1.5rem;
+  background: var(--bg);
+  color: var(--black);
+  border-bottom: var(--border-thick);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .heroGrid {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.heroTitle {
+  font-size: clamp(4rem, 12vw, 9rem);
+  color: var(--black);
+  line-height: 0.8;
+  margin-bottom: 0;
+}
+
+.heroSub {
+  color: var(--teal);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.heroDescription {
+  color: var(--black);
+  font-weight: 600;
+  max-width: 550px;
+}
+
+.heroCta {
+  margin-top: 1rem;
+}
+
+.pinkBtn {
+  background-color: var(--teal);
+  color: var(--black);
+}
+
+.pinkBtn:hover {
+  background-color: var(--black);
+  color: var(--teal);
+}
+
+.heroImageWrapper {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  border: var(--border-thick);
+  border-color: var(--black);
+  overflow: hidden;
+  background-color: #E8E8E8;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.aboutSection, .whySection, .programsSection, .storiesSection, .joinSection {
+  padding: 4rem 1.5rem;
+}
+
+.aboutCard {
+  padding: 2.5rem;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .aboutGrid {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.aboutLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.aboutLeft h3 {
+  color: var(--teal);
+}
+
+.quoteText {
+  color: var(--orange);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 0.95;
+  margin-bottom: 0;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .whyGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.whyCard {
+  padding: 2.5rem;
+  gap: 1rem;
+}
+
+.whyNumber {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--teal);
+  line-height: 1;
+}
+
+.programsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .programsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .programsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.progCardContainer {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition-delay: calc(var(--i) * 150ms);
+}
+
+:global(.reveal.revealed) .progCardContainer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.progCard {
+  padding: 2rem;
+  height: 100%;
+  gap: 1rem;
+}
+
+.progTitle {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  color: var(--black);
+}
+
+.storiesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .storiesGrid {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+.storyCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.storyCard {
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .storyCard {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.storyPhotoWrapper {
+  width: 120px;
+  height: 120px;
+  border: var(--border-thick);
+  border-color: var(--teal);
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.storyPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.storyTextWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.storyQuote {
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--black);
+}
+
+.storyName {
+  color: var(--orange);
+}
+
+.storyRole {
+  color: #777777;
+  font-size: 0.8rem;
+}
+
+.carouselControls {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.carouselDot {
+  width: 16px;
+  height: 16px;
+  border: 3px solid var(--black);
+  background-color: var(--white);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.carouselDotActive {
+  background-color: var(--orange);
+  transform: scale(1.25);
+}
+
+.storiesStaticImage {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .storiesStaticImage {
+    display: block;
+  }
+}
+
+.staticImageCard {
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.staticImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.joinCard {
+  padding: 3rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .joinCard {
+    padding: 4rem 3rem;
+  }
+}
+
+.joinGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .joinGrid {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
+
+.joinLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: var(--black);
+}
+
+.joinTitle {
+  color: var(--black);
+  margin-bottom: 0;
+}
+
+.joinRight {
+  background-color: var(--white);
+  border: var(--border-thick);
+  padding: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.input {
+  background-color: var(--white);
+  color: var(--black);
+  border: var(--border-thick);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.input:focus {
+  border-color: var(--teal);
+  box-shadow: 6px 6px 0px var(--teal);
+}
+
+.status {
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.successStatus {
+  color: var(--teal);
+}
+
+.errorStatus {
+  color: var(--orange);
+}

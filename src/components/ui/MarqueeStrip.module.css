@@ -1,0 +1,24 @@
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-top: var(--border);
+  border-bottom: var(--border);
+  padding: 0.75rem 0;
+  user-select: none;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+}
+
+.bullet {
+  margin: 0 1.5rem;
+  color: inherit;
+}

@@ -1,0 +1,97 @@
+.section {
+  padding: 4rem 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.cardWrapper {
+  transition: transform 0.2s ease;
+  height: 100%;
+}
+
+.storyCard {
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.photoWrapper {
+  width: 60px;
+  height: 60px;
+  border: var(--border);
+  box-shadow: 3px 3px 0px var(--black);
+  overflow: hidden;
+  background-color: var(--white);
+  flex-shrink: 0;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.name {
+  font-size: 1.25rem;
+  color: var(--black);
+  line-height: 1.1;
+}
+
+.role {
+  color: #666666;
+  font-size: 0.7rem;
+}
+
+.startup {
+  color: var(--orange); /* Electric Green */
+  font-weight: 700;
+}
+
+.quoteWrapper {
+  flex-grow: 1;
+}
+
+.quote {
+  font-style: italic;
+  color: var(--black);
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-start;
+}

@@ -1,0 +1,10 @@
+<svg viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+  <text x="2" y="38" font-family="Bebas Neue" font-size="42" fill="#00FF41">i</text>
+  <text x="22" y="38" font-family="Bebas Neue" font-size="42" fill="#000000">EDC</text>
+  <rect x="108" y="30" width="8" height="4" fill="#3BBFBF"/>
+  <rect x="112" y="26" width="8" height="4" fill="#3BBFBF"/>
+  <rect x="116" y="22" width="8" height="4" fill="#3BBFBF"/>
+  <circle cx="102" cy="12" r="2" fill="#00FF41"/>
+  <circle cx="122" cy="32" r="2" fill="#00FF41"/>
+  <text x="2" y="50" font-family="JetBrains Mono" font-size="9" fill="#000000" letter-spacing="4">RIT</text>
+</svg>

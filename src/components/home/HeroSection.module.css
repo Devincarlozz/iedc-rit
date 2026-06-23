@@ -1,0 +1,99 @@
+.hero {
+  background-color: var(--black);
+  color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.heroContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  flex-grow: 1;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .heroContent {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.textBlock.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title {
+  font-size: clamp(3.5rem, 10vw, 7rem);
+}
+
+.accentText {
+  color: var(--orange);
+}
+
+.whiteText {
+  color: var(--white);
+}
+
+.subline {
+  color: var(--teal);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 1rem;
+}
+
+@media (min-width: 640px) {
+  .subline {
+    font-size: 1.1rem;
+  }
+}
+
+.tagline {
+  color: #c0c0c0;
+  max-width: 500px;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.visualBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s, transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+}
+
+.visualBlock.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.illustrationWrapper {
+  width: 100%;
+  max-width: 400px;
+}
+
+.svgIllustration {
+  width: 100%;
+  height: auto;
+}
