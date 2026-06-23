@@ -1,5 +1,6 @@
 import { defineComponent, ref, computed, onMounted, onUnmounted } from 'vue'
 import { team } from '../../data/team.js'
+import { sanitizeUrl } from '../../utils/security.js'
 import SectionTitle from '../ui/SectionTitle.jsx'
 import BrutalCard from '../ui/BrutalCard.jsx'
 import styles from './TeamPreview.module.css'
@@ -62,7 +63,7 @@ export default defineComponent({
                 <p class={`${styles.role} text-label`}>{member.role}</p>
                 <div class={styles.socials}>
                   <a 
-                    href={member.linkedin} 
+                    href={sanitizeUrl(member.linkedin)}
                     target="_blank" 
                     rel="noopener noreferrer" 
                     class={styles.socialBtn}
@@ -71,7 +72,7 @@ export default defineComponent({
                     IN
                   </a>
                   <a 
-                    href={member.instagram} 
+                    href={sanitizeUrl(member.instagram)}
                     target="_blank" 
                     rel="noopener noreferrer" 
                     class={styles.socialBtn}
