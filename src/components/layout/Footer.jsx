@@ -85,10 +85,10 @@ export default defineComponent({
 
             <div class={styles.col}>
               <h4 class={`${styles.title} text-label`}>CONNECT</h4>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class={styles.link}>Instagram</a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class={styles.link}>LinkedIn</a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class={styles.link}>YouTube</a>
-              <a href="mailto:iedc@rit.ac.in" class={styles.link}>Email</a>
+              <a href={sanitizeUrl("https://instagram.com")} target="_blank" rel="noopener noreferrer" class={styles.link}>Instagram</a>
+              <a href={sanitizeUrl("https://linkedin.com")} target="_blank" rel="noopener noreferrer" class={styles.link}>LinkedIn</a>
+              <a href={sanitizeUrl("https://youtube.com")} target="_blank" rel="noopener noreferrer" class={styles.link}>YouTube</a>
+              <a href={sanitizeUrl("mailto:iedc@rit.ac.in")} class={styles.link}>Email</a>
             </div>
 
             <div class={styles.newsletterCol}>

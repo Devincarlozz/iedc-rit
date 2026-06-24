@@ -1,5 +1,5 @@
 import { defineComponent, ref, onMounted } from 'vue'
-import { sanitize, rateLimitCheck, validateEmail, generateFormToken, validateFormToken } from '../utils/security.js'
+import { sanitize, rateLimitCheck, validateEmail, generateFormToken, validateFormToken, sanitizeUrl } from '../utils/security.js'
 import SectionTitle from '../components/ui/SectionTitle.jsx'
 import BrutalCard from '../components/ui/BrutalCard.jsx'
 import BrutalButton from '../components/ui/BrutalButton.jsx'
@@ -113,16 +113,16 @@ export default defineComponent({
             <div class={styles.col}>
               <h3 class={`${styles.colTitle} text-label`}>GET IN TOUCH</h3>
               <div class={styles.socialGrid}>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class={`${styles.socialCard} ${styles.insta}`}>
+                <a href={sanitizeUrl("https://instagram.com")} target="_blank" rel="noopener noreferrer" class={`${styles.socialCard} ${styles.insta}`}>
                   <span class={styles.socialLabel}>INSTAGRAM ↗</span>
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class={`${styles.socialCard} ${styles.linkedin}`}>
+                <a href={sanitizeUrl("https://linkedin.com")} target="_blank" rel="noopener noreferrer" class={`${styles.socialCard} ${styles.linkedin}`}>
                   <span class={styles.socialLabel}>LINKEDIN ↗</span>
                 </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class={`${styles.socialCard} ${styles.yt}`}>
+                <a href={sanitizeUrl("https://youtube.com")} target="_blank" rel="noopener noreferrer" class={`${styles.socialCard} ${styles.yt}`}>
                   <span class={styles.socialLabel}>YOUTUBE ↗</span>
                 </a>
-                <a href="mailto:iedc@rit.ac.in" class={`${styles.socialCard} ${styles.email}`}>
+                <a href={sanitizeUrl("mailto:iedc@rit.ac.in")} class={`${styles.socialCard} ${styles.email}`}>
                   <span class={styles.socialLabel}>EMAIL ↗</span>
                 </a>
               </div>
@@ -205,6 +205,7 @@ export default defineComponent({
                     allowfullscreen=""
                     loading="lazy"
                     title="RIT Campus Location Map"
+                    sandbox="allow-scripts allow-same-origin allow-popups"
                   ></iframe>
                 </div>
               </BrutalCard>
