@@ -204,6 +204,7 @@ export default defineComponent({
                     style={{ border: 0 }}
                     allowfullscreen=""
                     loading="lazy"
+                    sandbox="allow-scripts allow-same-origin allow-popups"
                     title="RIT Campus Location Map"
                   ></iframe>
                 </div>
