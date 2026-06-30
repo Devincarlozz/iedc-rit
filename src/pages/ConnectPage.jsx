@@ -205,6 +205,7 @@ export default defineComponent({
                     allowfullscreen=""
                     loading="lazy"
                     title="RIT Campus Location Map"
+                    sandbox="allow-scripts allow-same-origin allow-popups"
                   ></iframe>
                 </div>
               </BrutalCard>
