@@ -1,6 +1,6 @@
 import { defineComponent, ref, onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
-import { sanitize, rateLimitCheck, validateEmail, generateFormToken, validateFormToken, sanitizeUrl } from '../../utils/security.js'
+import { sanitize, rateLimitCheck, validateEmail, generateFormToken, validateFormToken } from '../../utils/security.js'
 import BrutalButton from '../ui/BrutalButton.jsx'
 import iedcLogo from '../../assets/iedc-logo.png'
 import styles from './Footer.module.css'
@@ -127,7 +127,7 @@ export default defineComponent({
         </div>
         <div class={`${styles.bottom} container`}>
           <p class={styles.copy}>
-            © 2025 IEDC RIT · All rights reserved · Created by Bhagath Krishnan (<a href={sanitizeUrl('https://instagram.com/b_k.dev')} target="_blank" rel="noopener noreferrer" class={styles.creditLink}>@b_k.dev</a> | <a href={sanitizeUrl('https://github.com/Devincarlozz')} target="_blank" rel="noopener noreferrer" class={styles.creditLink}>GitHub</a>)
+            © 2025 IEDC RIT · All rights reserved · Created by Bhagath Krishnan (<a href="https://instagram.com/b_k.dev" target="_blank" rel="noopener noreferrer" class={styles.creditLink}>@b_k.dev</a> | <a href="https://github.com/Devincarlozz" target="_blank" rel="noopener noreferrer" class={styles.creditLink}>GitHub</a>)
           </p>
         </div>
       </footer>
