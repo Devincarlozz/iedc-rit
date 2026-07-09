@@ -198,6 +198,9 @@ export default defineComponent({
                 </p>
                 <div class={styles.mapWrapper}>
                   <iframe
+                    /* 🛡️ Sentinel: Hardened with sandbox to prevent unexpected iframe behaviors
+                       while allowing necessary Google Maps functionality. */
+                    sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.567156965039!2d76.61587647478672!3d9.56515717992484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b062f689c1f6d3f%3A0x6b44558231c54b2d!2sRajiv%20Gandhi%20Institute%20of%20Technology%2C%20Kottayam!5e0!3m2!1sen!2sin!4v1717550000000!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
