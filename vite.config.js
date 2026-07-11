@@ -12,7 +12,9 @@ export default defineConfig({
   },
   server: {
     headers: {
-      'Content-Security-Policy': "default-src 'self'; img-src 'self' data: https://images.unsplash.com https://source.unsplash.com; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self'; connect-src 'self' ws://localhost:* http://localhost:* ws://127.0.0.1:* http://127.0.0.1:*; frame-src https://www.google.com; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests;",
+      // Defense-in-Depth: Restricted CSP to only allow necessary domains.
+      // img-src is limited to Pexels as it is the only external image provider used.
+      'Content-Security-Policy': "default-src 'self'; img-src 'self' data: https://images.pexels.com; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self'; connect-src 'self' ws://localhost:* http://localhost:* ws://127.0.0.1:* http://127.0.0.1:*; frame-src https://www.google.com; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests;",
       'X-Content-Type-Options': 'nosniff',
       'X-Frame-Options': 'DENY',
       'Referrer-Policy': 'strict-origin-when-cross-origin'
