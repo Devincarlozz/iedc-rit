@@ -45,7 +45,11 @@ export default defineComponent({
     }
 
     const isExternal = (url) => {
-      return url.startsWith('http://') || url.startsWith('https://') || url.startsWith('#')
+      return url.startsWith('http://') ||
+             url.startsWith('https://') ||
+             url.startsWith('#') ||
+             url.startsWith('mailto:') ||
+             url.startsWith('tel:')
     }
 
     return () => {
