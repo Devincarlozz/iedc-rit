@@ -139,15 +139,21 @@ export function validateFormToken(formId, token) {
 export function sanitizeUrl(url) {
   if (typeof url !== 'string' || !url.trim()) return '#'
 
-  const trimmed = url.trim()
+  // Strip zero-width characters and control characters to prevent obfuscated protocol XSS bypasses
+  const cleanUrl = url
+    .replace(/[\u200B-\u200D\uFEFF\u00AD]/g, '')
+    .replace(/[\x00-\x1F\x7F-\x9F]/g, '')
+    .trim()
+
+  if (!cleanUrl) return '#'
 
   // Allow relative paths, hash anchors, and protocol-relative URLs
-  if (trimmed.startsWith('/') || trimmed.startsWith('#') || trimmed.startsWith('./')) {
-    return trimmed
+  if (cleanUrl.startsWith('/') || cleanUrl.startsWith('#') || cleanUrl.startsWith('./')) {
+    return cleanUrl
   }
 
   // Check for dangerous protocols (case-insensitive, whitespace-stripped)
-  const normalized = trimmed.replace(/\s/g, '').toLowerCase()
+  const normalized = cleanUrl.replace(/\s/g, '').toLowerCase()
   const dangerousProtocols = ['javascript:', 'data:', 'vbscript:', 'blob:']
 
   for (const proto of dangerousProtocols) {
@@ -158,14 +164,14 @@ export function sanitizeUrl(url) {
 
   // Allow safe protocols
   const safeProtocols = ['http:', 'https:', 'mailto:', 'tel:']
-  const hasProtocol = /^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(trimmed)
+  const hasProtocol = /^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(cleanUrl)
 
   if (hasProtocol) {
-    const protocol = trimmed.slice(0, trimmed.indexOf(':') + 1).toLowerCase()
+    const protocol = cleanUrl.slice(0, cleanUrl.indexOf(':') + 1).toLowerCase()
     if (!safeProtocols.includes(protocol)) {
       return '#'
     }
   }
 
-  return trimmed
+  return cleanUrl
 }
