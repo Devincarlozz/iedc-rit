@@ -139,7 +139,12 @@ export function validateFormToken(formId, token) {
 export function sanitizeUrl(url) {
   if (typeof url !== 'string' || !url.trim()) return '#'
 
-  const trimmed = url.trim()
+  // Strip zero-width characters and control characters to prevent protocol obfuscation bypasses
+  const cleaned = url
+    .replace(/[\u200B-\u200D\uFEFF\u00AD]/g, '')
+    .replace(/[\x00-\x1F\x7F-\x9F]/g, '')
+
+  const trimmed = cleaned.trim()
 
   // Allow relative paths, hash anchors, and protocol-relative URLs
   if (trimmed.startsWith('/') || trimmed.startsWith('#') || trimmed.startsWith('./')) {
