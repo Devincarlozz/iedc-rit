@@ -1,5 +1,6 @@
 import { defineComponent, ref, computed, onMounted, onUnmounted } from 'vue'
 import { events } from '../../data/events.js'
+import { sanitizeUrl } from '../../utils/security.js'
 import SectionTitle from '../ui/SectionTitle.jsx'
 import BrutalCard from '../ui/BrutalCard.jsx'
 import BrutalBadge from '../ui/BrutalBadge.jsx'
@@ -81,7 +82,7 @@ export default defineComponent({
               <BrutalCard glass={true} class={styles.eventCard}>
                 <div class={styles.imageWrapper}>
                   <img 
-                    src={event.img} 
+                    src={sanitizeUrl(event.img)}
                     alt={event.title}
                     class={styles.image}
                     loading="lazy"
