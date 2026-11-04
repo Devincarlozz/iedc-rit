@@ -129,9 +129,9 @@ export function validateFormToken(formId, token) {
 }
 
 /**
- * Sanitize a URL to prevent javascript:, data:, and vbscript: injection.
- * Returns '#' for any disallowed protocol. Allows http:, https:, mailto:,
- * tel:, relative paths, and hash anchors.
+ * Sanitize a URL to prevent javascript:, data:, and vbscript: injection as well as
+ * open redirects via protocol-relative URLs or zero-width / control character filter evasion.
+ * Returns '#' for any disallowed protocol or malicious pattern.
  * 
  * @param {string} url - URL to sanitize
  * @returns {string} Safe URL or '#' if blocked
@@ -139,15 +139,24 @@ export function validateFormToken(formId, token) {
 export function sanitizeUrl(url) {
   if (typeof url !== 'string' || !url.trim()) return '#'
 
-  const trimmed = url.trim()
+  // Strip zero-width and control characters to thwart filter evasions
+  const cleaned = url
+    .replace(/[\u200B-\u200D\uFEFF\u00AD]/g, '')
+    .replace(/[\x00-\x1F\x7F-\x9F]/g, '')
+    .trim()
 
-  // Allow relative paths, hash anchors, and protocol-relative URLs
-  if (trimmed.startsWith('/') || trimmed.startsWith('#') || trimmed.startsWith('./')) {
-    return trimmed
+  // Disallow protocol-relative URLs (// or /\) which can cause open redirects
+  if (cleaned.startsWith('//') || cleaned.startsWith('/\\')) {
+    return '#'
+  }
+
+  // Allow safe relative paths and hash anchors
+  if ((cleaned.startsWith('/') && !cleaned.startsWith('//')) || cleaned.startsWith('#') || cleaned.startsWith('./')) {
+    return cleaned
   }
 
   // Check for dangerous protocols (case-insensitive, whitespace-stripped)
-  const normalized = trimmed.replace(/\s/g, '').toLowerCase()
+  const normalized = cleaned.replace(/\s/g, '').toLowerCase()
   const dangerousProtocols = ['javascript:', 'data:', 'vbscript:', 'blob:']
 
   for (const proto of dangerousProtocols) {
@@ -156,16 +165,14 @@ export function sanitizeUrl(url) {
     }
   }
 
-  // Allow safe protocols
+  // Whitelist safe protocols
   const safeProtocols = ['http:', 'https:', 'mailto:', 'tel:']
-  const hasProtocol = /^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(trimmed)
-
-  if (hasProtocol) {
-    const protocol = trimmed.slice(0, trimmed.indexOf(':') + 1).toLowerCase()
-    if (!safeProtocols.includes(protocol)) {
+  const match = normalized.match(/^([a-z0-9+.-]+:)/)
+  if (match) {
+    if (!safeProtocols.includes(match[1])) {
       return '#'
     }
   }
 
-  return trimmed
+  return cleaned
 }
