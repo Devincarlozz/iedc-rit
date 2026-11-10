@@ -139,33 +139,37 @@ export function validateFormToken(formId, token) {
 export function sanitizeUrl(url) {
   if (typeof url !== 'string' || !url.trim()) return '#'
 
-  const trimmed = url.trim()
+  // Strip zero-width characters and control characters that can bypass protocol detection
+  const clean = url
+    .replace(/[\u200B-\u200D\uFEFF\u00AD]/g, '')
+    .replace(/[\x00-\x1F\x7F-\x9F]/g, '')
+    .trim()
 
-  // Allow relative paths, hash anchors, and protocol-relative URLs
-  if (trimmed.startsWith('/') || trimmed.startsWith('#') || trimmed.startsWith('./')) {
-    return trimmed
+  if (!clean) return '#'
+
+  // Disallow protocol-relative URLs (//evil.com or /\evil.com)
+  if (clean.startsWith('//') || clean.startsWith('/\\')) {
+    return '#'
   }
 
-  // Check for dangerous protocols (case-insensitive, whitespace-stripped)
-  const normalized = trimmed.replace(/\s/g, '').toLowerCase()
-  const dangerousProtocols = ['javascript:', 'data:', 'vbscript:', 'blob:']
-
-  for (const proto of dangerousProtocols) {
-    if (normalized.startsWith(proto)) {
-      return '#'
-    }
+  // Allow safe relative paths, hash anchors, and relative dot paths
+  if (clean.startsWith('/') || clean.startsWith('#') || clean.startsWith('./')) {
+    return clean
   }
 
-  // Allow safe protocols
+  // Validate protocol against allowed whitelist
+  const normalized = clean.replace(/\s/g, '').toLowerCase()
   const safeProtocols = ['http:', 'https:', 'mailto:', 'tel:']
-  const hasProtocol = /^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(trimmed)
+  const hasProtocol = /^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(normalized)
 
   if (hasProtocol) {
-    const protocol = trimmed.slice(0, trimmed.indexOf(':') + 1).toLowerCase()
+    const protocol = normalized.slice(0, normalized.indexOf(':') + 1)
     if (!safeProtocols.includes(protocol)) {
       return '#'
     }
+  } else {
+    return '#'
   }
 
-  return trimmed
+  return clean
 }
